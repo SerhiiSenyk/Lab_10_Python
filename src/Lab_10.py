@@ -22,7 +22,9 @@
 #- довжина велосипедних доріжок (в метрах)
 #- ціна вхідного квитка
 class Park :
+
     number_of_parks = 0
+
     def __init__(self ,address = None,length_cycle_tracks_in_meters = 0.0,
                  price_of_entrance_ticket = 0.0, year_foundation = 0, area = 0.0, title = None) :
         self.address = address
@@ -32,9 +34,11 @@ class Park :
         self.area = area
         self.title = title
         Park.number_of_parks += 1
+
     def __del__(self):
         Park.number_of_parks -= 1
         print("destructor worked")
+
     def __str__(self):
         return "Park : " +\
                 "\n\t address :\t" + str(self.address) +\
@@ -43,6 +47,7 @@ class Park :
                 "\n\t year foundation :\t" + str(self.year_foundation) +\
                 "\n\t area :\t" + str(self.area) +\
                 "\n\t title :\t" + str(self.title) + "\n"
+
     @staticmethod
     def get_number_of_parks():
         return Park.number_of_parks
